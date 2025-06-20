@@ -3,56 +3,56 @@
     "id": 1,
     "name": "Batik Mega Mendung",
     "price": 250000,
-    "image": "/mega-mendung.jpg",
+    "image": "/webp-resize/mega-mendung.jpg",
     "description": "Batik motif Mega Mendung, bahan katun premium, nyaman dipakai."
   },
   {
     "id": 2,
     "name": "Batik Parang",
     "price": 275000,
-    "image": "/parang.jpg",
+    "image": "/webp-resize/parang.jpg",
     "description": "Batik motif Parang klasik, cocok untuk acara formal dan santai."
   },
   {
     "id": 3,
     "name": "Batik Kawung",
     "price": 260000,
-    "image": "/kawung.jpg",
+    "image": "/webp-resize/kawung.jpg",
     "description": "Motif Kawung klasik, simbol kemurnian dan keadilan. Bahan halus dan adem."
   },
   {
     "id": 4,
     "name": "Batik Truntum",
     "price": 285000,
-    "image": "/truntum.jpg",
+    "image": "/webp-resize/truntum.jpg",
     "description": "Motif Truntum, penuh makna kasih sayang. Cocok untuk acara spesial."
   },
   {
     "id": 5,
     "name": "Batik Sogan",
     "price": 295000,
-    "image": "/sogan.jpg",
+    "image": "/webp-resize/sogan.jpg",
     "description": "Batik Sogan warna coklat klasik, elegan dan eksklusif."
   },
   {
     "id": 6,
     "name": "Batik Sekar Jagad",
     "price": 320000,
-    "image": "/sekarjagad.jpg",
+    "image": "/webp-resize/sekarjagad.jpg",
     "description": "Motif Sekar Jagad, melambangkan keindahan dan keragaman."
   },
   {
     "id": 7,
     "name": "Batik Lereng",
     "price": 245000,
-    "image": "/lereng.jpg",
+    "image": "/webp-resize/lereng.jpg",
     "description": "Motif Lereng, sederhana namun penuh filosofi. Bahan katun premium."
   },
   {
     "id": 8,
     "name": "Batik Tambal",
     "price": 265000,
-    "image": "/tambal.jpg",
+    "image": "/webp-resize/tambal.jpg",
     "description": "Motif Tambal, simbol harapan dan keberuntungan."
   }
 ]

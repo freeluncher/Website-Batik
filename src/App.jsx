@@ -1,15 +1,18 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Landing from "./pages/Landing";
-import Home from "./pages/Home";
+
+const Landing = lazy(() => import("./pages/Landing"));
+const Home = lazy(() => import("./pages/Home"));
 
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/katalog" element={<Home />} />
-      </Routes>
+      <Suspense fallback={<div style={{textAlign:'center',margin:'2rem'}}>Memuat halaman...</div>}>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/katalog" element={<Home />} />
+        </Routes>
+      </Suspense>
     </Router>
   );
 }
