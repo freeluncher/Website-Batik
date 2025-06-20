@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ProductCard = ({ product }) => (
-  <div style={{
+  <div className="product-card" style={{
     background: '#fff',
     borderRadius: '12px',
     boxShadow: '0 2px 12px rgba(77, 54, 24, 0.08)',
@@ -10,7 +10,7 @@ const ProductCard = ({ product }) => (
     display: 'flex',
     flexDirection: 'column',
     maxWidth: '350px',
-    margin: '0 auto',
+    width: '100%',
     border: '1.5px solid #bfa77a' // aksen heritage
   }}>
     <img src={product.image} alt={product.name} style={{ width: '100%', height: '200px', objectFit: 'cover', background: '#f5eee6' }} />
