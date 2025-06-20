@@ -1,8 +1,17 @@
-import React from 'react';
-import Home from './pages/Home';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Landing from "./pages/Landing";
+import Home from "./pages/Home";
 
 function App() {
-  return <Home />;
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/katalog" element={<Home />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
