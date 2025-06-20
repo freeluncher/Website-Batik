@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import styles from './TestimonialSlider.module.css';
 
 const testimonials = [
   {
@@ -45,24 +46,23 @@ const TestimonialSlider = () => {
   const prev = () => setStart(s => Math.max(s - 1, 0));
 
   return (
-    <div style={{ width: '100vw', maxWidth: '100vw', position: 'relative', margin: '2.5rem 0', padding: 0 }}>
-      <h2 style={{ fontFamily: "Playfair Display, serif", color: "#2d1c0b", fontSize: "1.1rem", marginBottom: "1.2rem", textAlign: 'center' }}>Testimoni Pelanggan</h2>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 24 }}>
-        <button aria-label="Sebelumnya" onClick={prev} disabled={start === 0} style={{ background: 'none', border: 'none', cursor: start === 0 ? 'not-allowed' : 'pointer', fontSize: 28, color: start === 0 ? '#e0d3b8' : '#bfa77a', padding: 4 }}>&#8592;</button>
+    <div className={styles.testimonialSlider}>
+      <h2 className={styles.testimonialTitle}>Testimoni Pelanggan</h2>
+      <div className={styles.testimonialNav}>
+        <button
+          aria-label="Sebelumnya"
+          onClick={prev}
+          disabled={start === 0}
+          className={styles.testimonialBtn}
+        >&#8592;</button>
         <div
           ref={sliderRef}
-          style={{
-            display: 'flex',
-            gap: 24,
-            overflow: 'visible', // ubah dari 'hidden' ke 'visible'
-            width: cardsPerView === 1 ? 320 : cardsPerView === 2 ? 700 : 1100,
-            transition: 'width 0.3s',
-            justifyContent: 'center',
-          }}
+          className={styles.testimonialSliderInner}
+          style={{ width: cardsPerView === 1 ? 320 : cardsPerView === 2 ? 700 : 1100 }}
         >
           {testimonials.slice(start, start + cardsPerView).map((t, i) => (
-            <div className="card-heritage" key={i} style={{ minWidth: 320, maxWidth: 420, flex: 1, margin: 0 }}>
-              <blockquote style={{ fontStyle: "italic", color: "#4e2e0e", margin: 0, minHeight: 70, textAlign: 'left' }}>
+            <div className={styles.testimonialCard} key={i}>
+              <blockquote className={styles.testimonialBlockquote}>
                 "{t.text}"
                 <br />
                 <span style={{ fontWeight: "bold", color: "#2d1c0b" }}>- {t.name}</span>
@@ -70,11 +70,23 @@ const TestimonialSlider = () => {
             </div>
           ))}
         </div>
-        <button aria-label="Selanjutnya" onClick={next} disabled={start >= maxStart} style={{ background: 'none', border: 'none', cursor: start >= maxStart ? 'not-allowed' : 'pointer', fontSize: 28, color: start >= maxStart ? '#e0d3b8' : '#bfa77a', padding: 4 }}>&#8594;</button>
+        <button
+          aria-label="Selanjutnya"
+          onClick={next}
+          disabled={start >= maxStart}
+          className={styles.testimonialBtn}
+        >&#8594;</button>
       </div>
-      <div style={{ display: 'flex', justifyContent: 'center', gap: 6, marginTop: 10 }}>
+      <div className={styles.testimonialDots}>
         {Array.from({ length: testimonials.length - cardsPerView + 1 }).map((_, i) => (
-          <span key={i} style={{ width: 8, height: 8, borderRadius: '50%', background: i === start ? '#bfa77a' : '#e0d3b8', display: 'inline-block' }} />
+          <span
+            key={i}
+            className={
+              i === start
+                ? `${styles.testimonialDot} ${styles.testimonialDotActive}`
+                : styles.testimonialDot
+            }
+          />
         ))}
       </div>
     </div>
