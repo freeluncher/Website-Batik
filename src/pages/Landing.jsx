@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
+import TestimonialSlider from "../components/TestimonialSlider";
 
 const Landing = () => {
 	const katalogRef = useRef(null);
@@ -13,18 +14,20 @@ const Landing = () => {
 	};
 
 	return (
-		<div style={{ minHeight: "100vh" }}>
+		<div style={{ minHeight: "100vh", width: '100vw', overflowX: 'hidden' }}>
 			<Navbar />
 			<main
 				style={{
-					maxWidth: "600px",
-					margin: "0 auto",
-					padding: "2rem 1rem",
-					display: "flex",
-					flexDirection: "column",
-					alignItems: "center",
-					textAlign: "center",
-				}}>
+					width: '100vw',
+					maxWidth: '100vw',
+					padding: '2.5rem 0',
+					display: 'flex',
+					flexDirection: 'column',
+					alignItems: 'center',
+					textAlign: 'center',
+					boxSizing: 'border-box',
+				}}
+			>
 				<div style={{ display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "1.5rem" }}>
 					<img src="/logo-tosri.svg" alt="Logo Batik Tosri" style={{ width: "80px", marginRight: "0.5rem", display: "inline-block", verticalAlign: "middle", filter: "drop-shadow(0 2px 8px #bfa77a)" }} />
 					<h1 style={{ display: "inline-block", verticalAlign: "middle", fontFamily: "Playfair Display, serif", color: "#2d1c0b", fontSize: "2rem", margin: 0, letterSpacing: "2px" }}>Batik Tosri</h1>
@@ -35,7 +38,7 @@ const Landing = () => {
 				<Link to="/katalog" className="btn-heritage" style={{ marginBottom: "2rem", textDecoration: "none", display: "inline-block" }}>
 					Lihat Katalog
 				</Link>
-				<div className="card-heritage">
+				<div className="card-heritage" style={{ margin: '0 auto', width: '100%', maxWidth: 600 }}>
 					<h2 style={{ fontFamily: "Playfair Display, serif", color: "#2d1c0b", fontSize: "1.5rem", marginBottom: "1rem" }}>Kenapa Pilih Batik Tosri?</h2>
 					<ul style={{ textAlign: "left", color: "#2d1c0b", fontFamily: "Inter, Arial, sans-serif", fontSize: "1rem", margin: 0 }}>
 						<li>Kualitas premium, detail halus dan tahan lama</li>
@@ -46,14 +49,7 @@ const Landing = () => {
 						<li>Order mudah & cepat via WhatsApp</li>
 					</ul>
 				</div>
-				<div className="card-heritage">
-					<h2 style={{ fontFamily: "Playfair Display, serif", color: "#2d1c0b", fontSize: "1.1rem", marginBottom: "0.5rem" }}>Testimoni Pelanggan</h2>
-					<blockquote style={{ fontStyle: "italic", color: "#4e2e0e", margin: 0 }}>
-						"Batik Tosri benar-benar beda, motifnya unik dan kualitasnya premium! Saya bangga memakai karya asli Bakaran Wetan."
-						<br />
-						<span style={{ fontWeight: "bold", color: "#2d1c0b" }}>- Sari, Surabaya</span>
-					</blockquote>
-				</div>
+				<TestimonialSlider />
 				<a
 					href="https://wa.me/6281234567890?text=Halo%20saya%20tertarik%20dengan%20Batik%20Tosri%20premium%20Bakaran%20Wetan"
 					className="btn-heritage"
