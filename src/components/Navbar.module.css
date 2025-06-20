@@ -1,0 +1,103 @@
+.navbar {
+  width: 100%;
+  padding: 1rem;
+  background: #2d1c0b;
+  border-bottom: 2px solid #bfa77a;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(77, 54, 24, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  justify-content: space-between;
+}
+
+.navbarBrand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbarLogo {
+  height: 36px;
+  width: 36px;
+  object-fit: contain;
+  background: transparent;
+}
+
+.navbarTitle {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #c0a77a;
+  font-family: Georgia, serif;
+  letter-spacing: 2px;
+}
+
+.navbarLinks {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.navbarLink {
+  color: #fffbe6;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 1px;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+  transition: color 0.2s, border-bottom 0.2s;
+}
+
+.navbarLinkActive {
+  color: #bfa77a;
+  border-bottom: 2px solid #bfa77a;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 1rem;
+  margin-right: 18px;
+}
+
+.hamburgerBar {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: #bfa77a;
+  margin: 6px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+@media (max-width: 700px) {
+  .navbarLinks {
+    display: none !important;
+    position: absolute;
+    top: 64px;
+    right: 0;
+    background: #2d1c0b;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(77,54,24,0.18);
+    flex-direction: column;
+    gap: 0;
+    min-width: 140px;
+    max-width: 90vw;
+    padding: 0.7rem 0.5rem;
+    z-index: 100;
+  }
+  .navbarLinksOpen {
+    display: flex !important;
+  }
+  .hamburger {
+    display: block !important;
+    margin-right: 18px !important;
+  }
+}
