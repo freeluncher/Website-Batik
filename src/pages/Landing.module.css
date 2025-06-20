@@ -2,6 +2,21 @@
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.landingContainer::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('/pattern-batik.svg') no-repeat center center;
+  background-size: 350vw 350vh;
+  opacity: 0.02;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .landingMain {
@@ -103,9 +118,6 @@
   width: 100%;
   max-width: 600px;
   border-radius: 20px;
-  background: 
-    linear-gradient(135deg, rgba(255,255,255,0.7) 80%, rgba(191,167,122,0.15)),
-    linear-gradient(135deg, #bfa77a, #e0d3b8);
   background-clip: padding-box, border-box;
   box-shadow: 0 4px 24px 0 rgba(191,167,122,0.10), 0 1.5px 8px 0 rgba(45,28,11,0.08);
   backdrop-filter: blur(4px);
@@ -115,4 +127,67 @@
   box-shadow: 0 8px 32px 0 rgba(191,167,122,0.18), 0 2px 0 #bfa77a;
   transform: translateY(-6px) scale(1.025);
   border-color: #2d1c0b;
+}
+
+.heroSection {
+  width: 100vw;
+  max-width: 100vw;
+  margin: 0 -8vw 2.5rem -8vw;
+  margin-top: -2.5rem;
+  padding: 2.5rem 0 2.2rem 0;
+  background: linear-gradient(120deg, #fffbe6 70%, #f5eee6 100%);
+  border-radius: 0 0 32px 32px;
+  box-shadow: 0 4px 24px 0 rgba(191,167,122,0.10), 0 1.5px 8px 0 rgba(45,28,11,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  animation: fadeInLanding 1.1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@media (max-width: 900px) {
+  .heroSection {
+    margin: 0 -4vw 2rem -4vw;
+    border-radius: 0 0 18px 18px;
+    padding: 1.5rem 0 1.5rem 0;
+  }
+}
+@media (max-width: 600px) {
+  .heroSection {
+    margin: 0 -2vw 1.2rem -2vw;
+    border-radius: 0 0 10px 10px;
+    padding: 1rem 0 1rem 0;
+  }
+}
+
+.heritageSection {
+  width: 100vw;
+  max-width: 100vw;
+  margin: 0 -8vw 2.5rem -8vw;
+  padding: 2.5rem 0 2.2rem 0;
+  background: linear-gradient(120deg, #f5eee6 70%, #fffbe6 100%);
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .heritageSection {
+    margin: 0 -4vw 2rem -4vw;
+    border-radius: 18px;
+    padding: 1.5rem 0 1.5rem 0;
+  }
+}
+@media (max-width: 600px) {
+  .heritageSection {
+    margin: 0 -2vw 1.2rem -2vw;
+    border-radius: 10px;
+    padding: 1rem 0 1rem 0;
+  }
 }

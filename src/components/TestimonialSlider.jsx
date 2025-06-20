@@ -25,9 +25,9 @@ const testimonials = [
 ];
 
 const getCardsPerView = () => {
-  if (window.innerWidth >= 1200) return 3;
-  if (window.innerWidth >= 700) return 2;
-  return 1;
+  if (window.innerWidth <= 600) return 1;
+  if (window.innerWidth < 1200) return 2;
+  return 3;
 };
 
 const TestimonialSlider = () => {
@@ -64,7 +64,11 @@ const TestimonialSlider = () => {
           >
             <div
               className={styles.testimonialSliderTestInner}
-              style={{ transform: `translateX(-${start * (cardsPerView === 1 ? 320 : cardsPerView === 2 ? 350 : 370)}px)` }}
+              style={{
+                transform: cardsPerView === 1
+                  ? `translateX(-${start * 100}%)`
+                  : `translateX(-${start * (cardsPerView === 2 ? 350 : 370)}px)`
+              }}
             >
               {testimonials.map((t, i) => (
                 <div
@@ -72,10 +76,6 @@ const TestimonialSlider = () => {
                   tabIndex="0"
                   aria-label={`Testimoni dari ${t.name}`}
                   key={i}
-                  style={{
-                    minWidth: cardsPerView === 1 ? 320 : cardsPerView === 2 ? 350 : 370,
-                    maxWidth: cardsPerView === 1 ? 320 : cardsPerView === 2 ? 350 : 370
-                  }}
                 >
                   <blockquote className={styles.testimonialText} lang="id">
                     "{t.text}"
