@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Batik Mega Mendung",
+    "price": 250000,
+    "image": "/mega-mendung.jpg",
+    "description": "Batik motif Mega Mendung, bahan katun premium, nyaman dipakai."
+  },
+  {
+    "id": 2,
+    "name": "Batik Parang",
+    "price": 275000,
+    "image": "/parang.jpg",
+    "description": "Batik motif Parang klasik, cocok untuk acara formal dan santai."
+  }
+]

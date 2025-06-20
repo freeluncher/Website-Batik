@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  background: #f5eee6; /* coklat muda heritage */
+  color: #2d1c0b; /* coklat tua */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 1px;
+}
+
+a {
+  color: #4e2e0e;
+}
+
+@media (max-width: 600px) {
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 1rem;
+  }
+  main {
+    padding: 0.5rem !important;
+  }
+}
