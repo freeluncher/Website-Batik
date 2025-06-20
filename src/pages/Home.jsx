@@ -5,11 +5,21 @@ import styles from './Home.module.css';
 
 const Home = () => {
   const [products, setProducts] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch('/src/data/products.json')
-      .then(res => res.json())
-      .then(data => setProducts(data));
+      .then(res => {
+        if (!res.ok) throw new Error('Gagal memuat data produk');
+        return res.json();
+      })
+      .then(data => {
+        setProducts(data);
+        setError(null);
+      })
+      .catch(err => setError(err.message))
+      .finally(() => setLoading(false));
   }, []);
 
   return (
@@ -19,8 +29,10 @@ const Home = () => {
         <h1 className={styles.katalogTitle}>
           Katalog Batik
         </h1>
+        {loading && <div style={{textAlign:'center', margin:'2rem 0'}}>Memuat data produk...</div>}
+        {error && <div style={{color:'#b94a48', textAlign:'center', margin:'2rem 0'}}>Error: {error}</div>}
         <div className={styles.productList}>
-          {products.map(product => (
+          {!loading && !error && products.map(product => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
