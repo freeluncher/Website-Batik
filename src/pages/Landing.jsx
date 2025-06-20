@@ -19,16 +19,16 @@ const Landing = () => {
 			<Navbar />
 			<main className={styles.landingMain}>
 				<div className={styles.landingHeader}>
-					<img src="/logo-tosri.svg" alt="Logo Batik Tosri" className={styles.landingLogo} />
-					<h1 className={styles.landingTitle}>Batik Tosri</h1>
+					<img src="/logo-tosri.svg" alt="Logo Batik Tosri" className={styles.landingLogo} width="80" height="80" decoding="async" />
+					<h1 className={styles.landingTitle} tabIndex="0">Batik Tosri</h1>
 				</div>
-				<p className={styles.landingDesc}>
+				<p className={styles.landingDesc} aria-label="Deskripsi Batik Tosri">
 					Batik premium buatan tangan pengrajin berpengalaman lebih dari 50 tahun di <b>Desa Bakaran Wetan, Juwana, Pati, Jawa Tengah</b>. Setiap helai batik adalah karya seni yang mengedepankan kualitas, tradisi, dan keindahan warisan budaya Indonesia.
 				</p>
-				<Link to="/katalog" className={`btn-heritage ${styles.landingBtn}`}>Lihat Katalog</Link>
+				<Link to="/katalog" className={`btn-heritage ${styles.landingBtn}`} aria-label="Lihat katalog batik">Lihat Katalog</Link>
 				<div className={`card-heritage ${styles.cardHeritageLanding}`}>
-					<h2 style={{ fontFamily: "Playfair Display, serif", color: "#2d1c0b", fontSize: "1.5rem", marginBottom: "1rem" }}>Kenapa Pilih Batik Tosri?</h2>
-					<ul style={{ textAlign: "left", color: "#2d1c0b", fontFamily: "Inter, Arial, sans-serif", fontSize: "1rem", margin: 0 }}>
+					<h2 style={{ fontFamily: "Playfair Display, serif", color: "#2d1c0b", fontSize: "1.5rem", marginBottom: "1rem" }} tabIndex="0">Kenapa Pilih Batik Tosri?</h2>
+					<ul style={{ textAlign: "left", color: "#2d1c0b", fontFamily: "Inter, Arial, sans-serif", fontSize: "1rem", margin: 0 }} aria-label="Keunggulan Batik Tosri">
 						<li>Kualitas premium, detail halus dan tahan lama</li>
 						<li>100% buatan tangan oleh pengrajin berpengalaman {">"}50 tahun</li>
 						<li>Motif heritage khas Bakaran Wetan, penuh makna budaya</li>
@@ -43,7 +43,8 @@ const Landing = () => {
 					className="btn-heritage"
 					style={{ marginTop: "2.5rem", textDecoration: "none", display: "inline-block" }}
 					target="_blank"
-					rel="noopener noreferrer">
+					rel="noopener noreferrer"
+					aria-label="Konsultasi dan order via WhatsApp">
 					Konsultasi & Order via WhatsApp
 				</a>
 				<div className={styles.lokasi}>

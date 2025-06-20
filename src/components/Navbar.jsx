@@ -12,12 +12,14 @@ const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbarBrand}>
-        <img src="/logo-tosri-secondary.svg" alt="Logo Batik Tosri" className={styles.navbarLogo} />
-        <span className={styles.navbarTitle}>Batik Tosri</span>
+        <img src="/logo-tosri-secondary.svg" alt="Logo Batik Tosri" className={styles.navbarLogo} width="40" height="40" decoding="async" />
+        <span className={styles.navbarTitle} tabIndex="0">Batik Tosri</span>
       </div>
       {/* Hamburger button */}
       <button
-        aria-label="Menu"
+        aria-label={open ? "Tutup menu navigasi" : "Buka menu navigasi"}
+        aria-expanded={open}
+        aria-controls="navbar-links"
         onClick={() => setOpen(!open)}
         className={styles.hamburger}
       >
@@ -27,11 +29,14 @@ const Navbar = () => {
       </button>
       {/* Menu links */}
       <div
+        id="navbar-links"
         className={
           open
             ? `${styles.navbarLinks} ${styles.navbarLinksOpen}`
             : styles.navbarLinks
         }
+        role="navigation"
+        aria-label="Navigasi utama"
       >
         <Link
           to="/"

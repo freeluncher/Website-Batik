@@ -69,13 +69,15 @@ const TestimonialSlider = () => {
               {testimonials.map((t, i) => (
                 <div
                   className={styles.testimonialCard}
+                  tabIndex="0"
+                  aria-label={`Testimoni dari ${t.name}`}
                   key={i}
                   style={{
                     minWidth: cardsPerView === 1 ? 320 : cardsPerView === 2 ? 350 : 370,
                     maxWidth: cardsPerView === 1 ? 320 : cardsPerView === 2 ? 350 : 370
                   }}
                 >
-                  <blockquote className={styles.testimonialBlockquote}>
+                  <blockquote className={styles.testimonialText} lang="id">
                     "{t.text}"
                     <br />
                     <span style={{ fontWeight: "bold", color: "#2d1c0b" }}>- {t.name}</span>
