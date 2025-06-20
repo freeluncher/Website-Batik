@@ -47,7 +47,7 @@ const Landing = () => {
 				{/* HERITAGE SECTION END */}
 				<TestimonialSlider />
 				<a
-					href="https://wa.me/6281234567890?text=Halo%20saya%20tertarik%20dengan%20Batik%20Tosri%20premium%20Bakaran%20Wetan"
+					href="https://wa.me/62895414954962?text=Halo%20saya%20tertarik%20dengan%20Batik%20Tosri%20premium%20Bakaran%20Wetan"
 					className="btn-heritage"
 					style={{ marginTop: "2.5rem", textDecoration: "none", display: "inline-block" }}
 					target="_blank"
