@@ -58,17 +58,32 @@ const TestimonialSlider = () => {
         <div
           ref={sliderRef}
           className={styles.testimonialSliderInner}
-          style={{ width: cardsPerView === 1 ? 320 : cardsPerView === 2 ? 700 : 1100 }}
         >
-          {testimonials.slice(start, start + cardsPerView).map((t, i) => (
-            <div className={styles.testimonialCard} key={i}>
-              <blockquote className={styles.testimonialBlockquote}>
-                "{t.text}"
-                <br />
-                <span style={{ fontWeight: "bold", color: "#2d1c0b" }}>- {t.name}</span>
-              </blockquote>
+          <div
+            className={styles.testimonialSliderTestViewport}
+          >
+            <div
+              className={styles.testimonialSliderTestInner}
+              style={{ transform: `translateX(-${start * (cardsPerView === 1 ? 320 : cardsPerView === 2 ? 350 : 370)}px)` }}
+            >
+              {testimonials.map((t, i) => (
+                <div
+                  className={styles.testimonialCard}
+                  key={i}
+                  style={{
+                    minWidth: cardsPerView === 1 ? 320 : cardsPerView === 2 ? 350 : 370,
+                    maxWidth: cardsPerView === 1 ? 320 : cardsPerView === 2 ? 350 : 370
+                  }}
+                >
+                  <blockquote className={styles.testimonialBlockquote}>
+                    "{t.text}"
+                    <br />
+                    <span style={{ fontWeight: "bold", color: "#2d1c0b" }}>- {t.name}</span>
+                  </blockquote>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
         <button
           aria-label="Selanjutnya"
