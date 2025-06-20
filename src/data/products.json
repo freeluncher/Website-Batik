@@ -12,5 +12,47 @@
     "price": 275000,
     "image": "/parang.jpg",
     "description": "Batik motif Parang klasik, cocok untuk acara formal dan santai."
+  },
+  {
+    "id": 3,
+    "name": "Batik Kawung",
+    "price": 260000,
+    "image": "/kawung.jpg",
+    "description": "Motif Kawung klasik, simbol kemurnian dan keadilan. Bahan halus dan adem."
+  },
+  {
+    "id": 4,
+    "name": "Batik Truntum",
+    "price": 285000,
+    "image": "/truntum.jpg",
+    "description": "Motif Truntum, penuh makna kasih sayang. Cocok untuk acara spesial."
+  },
+  {
+    "id": 5,
+    "name": "Batik Sogan",
+    "price": 295000,
+    "image": "/sogan.jpg",
+    "description": "Batik Sogan warna coklat klasik, elegan dan eksklusif."
+  },
+  {
+    "id": 6,
+    "name": "Batik Sekar Jagad",
+    "price": 320000,
+    "image": "/sekarjagad.jpg",
+    "description": "Motif Sekar Jagad, melambangkan keindahan dan keragaman."
+  },
+  {
+    "id": 7,
+    "name": "Batik Lereng",
+    "price": 245000,
+    "image": "/lereng.jpg",
+    "description": "Motif Lereng, sederhana namun penuh filosofi. Bahan katun premium."
+  },
+  {
+    "id": 8,
+    "name": "Batik Tambal",
+    "price": 265000,
+    "image": "/tambal.jpg",
+    "description": "Motif Tambal, simbol harapan dan keberuntungan."
   }
 ]
