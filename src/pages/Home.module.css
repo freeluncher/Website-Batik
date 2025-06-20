@@ -1,0 +1,26 @@
+.mainContainer {
+  background: #f5eee6;
+  min-height: 100vh;
+}
+
+.mainContent {
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.katalogTitle {
+  font-size: 1.3rem;
+  margin: 1rem 0;
+  text-align: center;
+  color: #2d1c0b;
+  font-family: Georgia, serif;
+  letter-spacing: 2px;
+}
+
+.productList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}

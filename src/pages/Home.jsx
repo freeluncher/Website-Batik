@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import ProductCard from '../components/ProductCard';
+import styles from './Home.module.css';
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -12,18 +13,13 @@ const Home = () => {
   }, []);
 
   return (
-    <div style={{ background: '#f5eee6', minHeight: '100vh' }}>
+    <div className={styles.mainContainer}>
       <Navbar />
-      <main style={{ padding: '1rem', maxWidth: '1200px', margin: '0 auto' }}>
-        <h1 style={{ fontSize: '1.3rem', margin: '1rem 0', textAlign: 'center', color: '#2d1c0b', fontFamily: 'Georgia, serif', letterSpacing: '2px' }}>
+      <main className={styles.mainContent}>
+        <h1 className={styles.katalogTitle}>
           Katalog Batik
         </h1>
-        <div className="product-list" style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '2rem',
-          width: '100%',
-        }}>
+        <div className={styles.productList}>
           {products.map(product => (
             <ProductCard key={product.id} product={product} />
           ))}
