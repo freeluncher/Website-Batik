@@ -1,9 +1,25 @@
 import React from 'react';
 import styles from './ProductCard.module.css';
 
+const getWebpPath = (image) => {
+  if (!image) return '';
+  // Ambil nama file tanpa slash dan ekstensi
+  const match = image.match(/\/([\w-]+)\.jpg$/i);
+  if (match) return `/webp/${match[1]}.webp`;
+  return image;
+};
+
 const ProductCard = ({ product }) => (
   <div className={styles.productCard}>
-    <img src={product.image} alt={product.name} className={styles.productImage} />
+    <picture>
+      <source srcSet={getWebpPath(product.image)} type="image/webp" />
+      <img
+        src={product.image}
+        alt={product.name}
+        className={styles.productImage}
+        loading="lazy"
+      />
+    </picture>
     <div className={styles.productContent}>
       <h2 className={styles.productName}>{product.name}</h2>
       <p className={styles.productPrice}>Rp{product.price.toLocaleString()}</p>
