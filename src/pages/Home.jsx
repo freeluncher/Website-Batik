@@ -29,11 +29,11 @@ const Home = () => {
         <h1 className={styles.katalogTitle}>
           Katalog Batik
         </h1>
-        {loading && <div style={{textAlign:'center', margin:'2rem 0'}}>Memuat data produk...</div>}
-        {error && <div style={{color:'#b94a48', textAlign:'center', margin:'2rem 0'}}>Error: {error}</div>}
+        {loading && <div aria-live="polite" style={{textAlign:'center', margin:'2rem 0'}}>Memuat data produk...</div>}
+        {error && <div aria-live="assertive" style={{color:'#b94a48', textAlign:'center', margin:'2rem 0'}}>Error: {error}</div>}
         <div className={styles.productList}>
-          {!loading && !error && products.map(product => (
-            <ProductCard key={product.id} product={product} />
+          {!loading && !error && products.map((product, idx) => (
+            <ProductCard key={product.id} product={product} eager={idx === 0} />
           ))}
         </div>
       </main>
