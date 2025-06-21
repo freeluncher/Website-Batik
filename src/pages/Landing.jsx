@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 import TestimonialSlider from "../components/TestimonialSlider";
+import Footer from "../components/Footer";
 import styles from './Landing.module.css';
 
 const Landing = () => {
@@ -45,22 +46,28 @@ const Landing = () => {
 					</div>
 				</section>
 				{/* HERITAGE SECTION END */}
-				<TestimonialSlider />
-				<a
-					href="https://wa.me/62895414954962?text=Halo%20saya%20tertarik%20dengan%20Batik%20Tosri%20premium%20Bakaran%20Wetan"
-					className="btn-heritage"
-					style={{ marginTop: "2.5rem", textDecoration: "none", display: "inline-block" }}
-					target="_blank"
-					rel="noopener noreferrer"
-					aria-label="Konsultasi dan order via WhatsApp">
-					Konsultasi & Order via WhatsApp
-				</a>
+				{/* TESTIMONIAL SECTION START */}
+				<section aria-labelledby="testimonials-title">
+					<h2 id="testimonials-title" style={{position: 'absolute', left: '-9999px', top: 'auto', width: '1px', height: '1px', overflow: 'hidden'}}>Testimoni Pelanggan</h2>
+					<TestimonialSlider />
+					<a
+						href="https://wa.me/62895414954962?text=Halo%20saya%20tertarik%20dengan%20Batik%20Tosri%20premium%20Bakaran%20Wetan"
+						className="btn-heritage"
+						style={{ marginTop: "2.5rem", textDecoration: "none", display: "inline-block" }}
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="Konsultasi dan order via WhatsApp">
+						Konsultasi & Order via WhatsApp
+					</a>
+				</section>
+				{/* TESTIMONIAL SECTION END */}
 				<div className={styles.lokasi}>
 					<b>Lokasi Pengrajin:</b>
 					<br />
 					Desa Bakaran Wetan, Kecamatan Juwana, Kabupaten Pati, Jawa Tengah, Indonesia
 				</div>
 			</main>
+			<Footer />
 		</div>
 	);
 };
